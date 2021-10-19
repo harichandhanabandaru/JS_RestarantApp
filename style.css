@@ -118,7 +118,6 @@ button:hover{
     transition: visibility 0s ,opacity 0.5s;
   }
 
-  /* added */
   .modal-bg1{
     position: fixed;
     width:100%;
@@ -206,3 +205,7 @@ button:hover{
     font-weight: bold;
     cursor: pointer;
   }
+  
+ th, td ,p{
+cursor:pointer;
+}
