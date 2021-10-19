@@ -19,17 +19,7 @@ const tables=[
      }
 ];
 
-// flag=0
-// console.log(tables[0])
-// if(flag==0)
-// {
-//     alert("0p0p000p")
-//     for(var i=0;i<tables.length;i++)
-//     {
-//         sessionStorage.setItem(tables[i].id,JSON.stringify(tables[i]))
-//         flag=1
-//     }
-// }
+
 
 const items=[
     {   id:1,
@@ -123,7 +113,7 @@ function searchfun()
     let myTable=document.getElementById('myItems');
     let tr1=myTable.getElementsByTagName('tr');
 
-    // tr[0].style.display=""  //hurray its working
+    
 
     console.log("kkkkkkkkkkkkkkkkkkkk")
     for(var i=0;i<tr1.length;i++)
@@ -157,8 +147,7 @@ function searchfun()
         var tr1ccc4=tr1ccc3[1].innerHTML
         console.log(tr1ccc4)
 
-        // var tr1ccc5=tr1ccc3[2].innerHTML
-        // console.log(tr1ccc5)
+        
 
         console.log(filter)
 
@@ -171,9 +160,9 @@ function searchfun()
         }
 
 
-        console.log("qqqqqq")
+        
     }
-    console.log("lllllllllllllllll")
+   
 }
 function searchTablefun()
 {
@@ -181,14 +170,9 @@ function searchTablefun()
     let filter=document.getElementById('myTableInput').value.toUpperCase();
     let myTable=document.getElementById('myTable');
     let tr1=myTable.getElementsByTagName('tr');
-    console.log("hellosfnklm;")
-    console.log(tr1)
-
-    // tr[0].style.display=""  //hurray its working
-
-    console.log("kkkkkkkkkkkkkkkkkkkk")
+   
     for(var i=0;i<tr1.length;i++)
-    {console.log("ppppp")
+    {
         var tr1c=tr1[i]
         console.log(tr1c)
         var tr1cc=tr1[i].childNodes
@@ -240,9 +224,9 @@ function searchTablefun()
         }
 
 
-        console.log("qqqqqq")
+        
     }
-    console.log("lllllllllllllllll")
+    
 }
 
 function popup(fun1)
@@ -301,7 +285,6 @@ function demo(tablenum,i,quantity1,price)
    
     var temptable=[]
      temptable=JSON.parse(sessionStorage.getItem(Number(tablenum))) || [];
-    // alert(temptable[i])
      console.log(temptable[i].quantity)
 
    
@@ -325,21 +308,16 @@ function demo(tablenum,i,quantity1,price)
      document.getElementById(tableidd).innerHTML=sessionStorage.getItem(Number(tablenum)+"2");
 
 
-    //alert(temptable[i].quantity)
+    
 
 
      var quan=temptable[i].quantity;
 
 
      temptable[i].itembill=(quan*(temptable[i].price))
-     console.log(temptable[i].quantity)
-     console.log(temptable[i].itembill)
      var ttt="itembill"+i
    document.getElementById(ttt).innerHTML=(temptable[i].itembill);
 
-     
-
-     //alert("item qbnaity "+temptable[i].quantity)
      sessionStorage.setItem(Number(tablenum),JSON.stringify(temptable));
 
     
@@ -351,7 +329,6 @@ function deleteitem(tablenum,i)
     var temptable=[]
     alert("Item deleted")
      temptable=JSON.parse(sessionStorage.getItem(Number(tablenum))) || [];
-    //  alert(temptable[i].bill)
 
     var price=temptable[i].price
     var quantity=temptable[i].quantity
@@ -371,32 +348,19 @@ function deleteitem(tablenum,i)
 
 
      temptable.splice(i,1);
-     //temptable.remove(i)
      sessionStorage.setItem(Number(tablenum),JSON.stringify(temptable));
 
      var tt="tablerow"+i
      document.getElementById(tt).remove();
 
-    //  alert("refreesh")
-    //  window.setTimeout(function () {
-    //     window.location.reload();
-    //   }, 30000);
-      
-    // var tt="t"+Number(tablenum);
-    //  var t1=JSON.parse(sessionStorage.getItem(tt));
-
-    // t1.bill=t1.bill-temptable[i].itembill
-    // sessionStorage.setItem(tt,JSON.stringify(t1));
+ 
 
 
     document.getElementById('hellopac').innerHTML=``;
 
-   // alert("table number "+tablenum)
      itemsselecteddetails(tablenum.toString())
      
-     var tableidd=tablebill+ tablenum.toString();
-     //document.getElementById(tableidd).innerHTML=sessionStorage.getItem(Number(tablenum)+"2");
-
+   
 }
 
 
@@ -409,7 +373,7 @@ for(var i=0;i<tables.length;i++)
    
    t1=JSON.parse(sessionStorage.getItem(tables[i].id));
 
-    //console.log(t1)
+    
 var p=11+(i*10)
 var q=12+(i*10)
 
@@ -500,7 +464,7 @@ function drop1(ev) {
 
     if(temp.length==0)
     {
-        //alert("inside if")
+        
         temp.push(items[itemid-1])
         sessionStorage.setItem(1, JSON.stringify(temp));
 
@@ -509,7 +473,7 @@ function drop1(ev) {
     }
     else
     {
-       // alert("inside ifelse")
+       
             flag=0
             number=0
             for(var j=0;j<temp.length;j++)
@@ -523,10 +487,7 @@ function drop1(ev) {
             }
             if(flag==1)
               { 
-                    //alert("hello");
-                    console.log( temp[number])
-                    console.log(items[itemid-1])
-                    //alert("helloend");
+                    
                     temp[number].quantity=temp[number].quantity+1
                     temp[number].itembill=temp[number].quantity*temp[number].price
 
@@ -535,9 +496,7 @@ function drop1(ev) {
                     temptable.totalitems=temptable.totalitems+1
                     sessionStorage.setItem("t1", JSON.stringify(temptable));
 
-                    // document.getElementById("tbill").innerHTML=temptable.bill;
-                    // document.getElementById("ttitems").innerHTML=temptable.totalitems;
-
+                  
 
                     sessionStorage.setItem(1, JSON.stringify(temp));
 
@@ -555,7 +514,7 @@ function drop1(ev) {
                     temp.push(items[itemid-1])
                     sessionStorage.setItem(1, JSON.stringify(temp));
 
-                    console.log("/////////////////////")
+                    
 
                     temptable.bill=temptable.bill+temp[number].price
                     temptable.totalitems=temptable.totalitems+1
@@ -572,7 +531,7 @@ function drop1(ev) {
 
                 }
                   
-                console.log(temp)
+                
     }
     location.reload();
 }
@@ -581,8 +540,7 @@ function drop1(ev) {
 function drop2(ev) {
     console.log("inside dropped table 2");
     var itemid = ev.dataTransfer.getData("itemid");
-    console.log("item dragged ")
-    console.log(items[itemid-1]);
+   
 
     var temp = [];
     temp = JSON.parse(sessionStorage.getItem(2)) || [];
@@ -596,7 +554,7 @@ function drop2(ev) {
 
     if(temp.length==0)
     {
-        //alert("inside if")
+        
         temp.push(items[itemid-1])
         sessionStorage.setItem(2, JSON.stringify(temp));
 
@@ -605,7 +563,7 @@ function drop2(ev) {
     }
     else
     {
-       // alert("inside ifelse")
+       
             flag=0
             number=0
             for(var j=0;j<temp.length;j++)
@@ -619,10 +577,7 @@ function drop2(ev) {
             }
             if(flag==1)
               { 
-                    //alert("hello");
-                    console.log( temp[number])
-                    console.log(items[itemid-1])
-                    //alert("helloend");
+                   
                     temp[number].quantity=temp[number].quantity+1
                     temp[number].itembill=temp[number].quantity*temp[number].price
 
@@ -651,7 +606,7 @@ function drop2(ev) {
                     temp.push(items[itemid-1])
                     sessionStorage.setItem(2, JSON.stringify(temp));
 
-                    console.log("/////////////////////")
+                    
 
                     temptable.bill=temptable.bill+temp[number].price
                     temptable.totalitems=temptable.totalitems+1
@@ -668,7 +623,7 @@ function drop2(ev) {
 
                 }
                   
-                console.log(temp)
+                
     }
     location.reload();
 }
@@ -676,8 +631,7 @@ function drop2(ev) {
 function drop3(ev) {
     console.log("inside dropped table 3");
     var itemid = ev.dataTransfer.getData("itemid");
-    console.log("item dragged ")
-    console.log(items[itemid-1]);
+   
 
     var temp = [];
     temp = JSON.parse(sessionStorage.getItem(3)) || [];
@@ -691,7 +645,7 @@ function drop3(ev) {
 
     if(temp.length==0)
     {
-        //alert("inside if")
+        
         temp.push(items[itemid-1])
         sessionStorage.setItem(3, JSON.stringify(temp));
 
@@ -700,7 +654,7 @@ function drop3(ev) {
     }
     else
     {
-       // alert("inside ifelse")
+       
             flag=0
             number=0
             for(var j=0;j<temp.length;j++)
@@ -714,10 +668,8 @@ function drop3(ev) {
             }
             if(flag==1)
               { 
-                    //alert("hello");
-                    console.log( temp[number])
-                    console.log(items[itemid-1])
-                    /////alert("helloend");
+                   
+                    
                     temp[number].quantity=temp[number].quantity+1
                     temp[number].itembill=temp[number].quantity*temp[number].price
 
@@ -746,7 +698,6 @@ function drop3(ev) {
                     temp.push(items[itemid-1])
                     sessionStorage.setItem(3, JSON.stringify(temp));
 
-                    console.log("/////////////////////")
 
                     temptable.bill=temptable.bill+temp[number].price
                     temptable.totalitems=temptable.totalitems+1
@@ -763,7 +714,7 @@ function drop3(ev) {
 
                 }
                   
-                console.log(temp)
+                
     }
     location.reload();
 }
@@ -819,31 +770,26 @@ function drag8(ev){
 
 
 
-// var tableadd1= document.getElementById('hellopac');
+
 
 
 
 
 function itemsselecteddetails(tablename)
 {
-    //var tableadd1= document.getElementById('helopac');
-
-//     var tableadd1= document.getElementsByClassName('bg-active ');
-// alert(" bg active "+tableadd2[0])
-// console.log(tableadd2.childNodes)
+   
 
     var tableadd1= document.getElementById('hellopac');
 
     if(typeof tablename=="string")
     {
-       // alert(typeof tablename)
-       // alert(tablename)
+       
         tablename=Number(tablename);
-       // alert(tablename)
+       
        
     }
     else{
-        //alert(typeof tablename)
+       
     tablename=Number(document.getElementById('hellopac').innerHTML);
 
     }
@@ -867,9 +813,7 @@ function itemsselecteddetails(tablename)
          </tr>
          </thead>
         <tbody >`
-        console.log(temptable[0])
-
-       // console.log(temptable[0].name)
+        
        var row22=``;
 for(var i=0;i<temptable.length;i++)
 {
@@ -904,28 +848,10 @@ tableadd1.innerHTML+=row11+row22+row33;
 function generatebill(tablename)
 {
 
-//     var tableadd1= document.getElementsByClassName('bg-active ');
-// alert(" bg active "+tableadd2[0])
-// console.log(tableadd2.childNodes)
-// tableadd1.innerHTML+=row11+row22+row33;
+
 document.getElementById('hellopac').innerHTML=``;
 
 var tableadd1= document.getElementById('hellopac');
-
-// if(typeof tablename=="string")
-// {
-//     alert(typeof tablename)
-//     alert(tablename)
-//     tablename=Number(tablename);
-//     alert(tablename)
-   
-// }
-// else{
-//     alert(typeof tablename)
-// tablename=Number(document.getElementById('hellopac').innerHTML);
-
-// }
-
 
 var temptable =[]
 temptable= JSON.parse(sessionStorage.getItem(Number(tablename))) || [];
@@ -944,9 +870,7 @@ var row11=`
      </tr>
      </thead>
     <tbody >`
-    // console.log(temptable[0])
-
-   // console.log(temptable[0].name)
+    
    var row22=``;
 for(var i=0;i<temptable.length;i++)
 {
@@ -972,7 +896,7 @@ row33=` <tr ><td colspan="5"><h3>Total Bill:</h3><span id="tablebill${tablename}
 
 `
 tableadd1.innerHTML+=row11+row22+row33;
-    //window.print();
+    
 }
 
 
@@ -994,17 +918,17 @@ for(var i=0;i<modalBtn.length;i++)
 
     let hellopac1=hellopac[i];
 
-    // alert("button what  "+i)
+    
 modalBtn1.addEventListener('click',function(){
 
-    // alert("button "+i)
+   
     modalBg1.classList.add('bg-active');
 
 
-    //hellopac1.IdList.add('bg-active')
+   
     hellopac1.setAttribute('id', 'hellopac');
 
-    //itemsselecteddetails(document.getElementById("tableid").innerHTML,i)
+
      itemsselecteddetails(2,i)
 
    
@@ -1012,7 +936,7 @@ modalBtn1.addEventListener('click',function(){
 
 modalClose1.addEventListener('click',function(){
 
-    // tableadd1= document.getElementById('hellopac');
+    
     document.getElementById('hellopac').innerHTML=``;
 
     modalBg1.classList.remove('bg-active');
@@ -1026,34 +950,7 @@ modalClose1.addEventListener('click',function(){
 
 }
 
-// var modalBtn3=document.querySelectorAll('.modal-btn1'); //get element by class name
-// var modalBg3=document.querySelectorAll('.modal-bg1');
-// var modalClose3=document.querySelectorAll('.modal-close1');
 
-// console.log("modal number")
-// console.log(modalBtn3)
-
-
-// for(var i=0;i<modalBtn3.length;i++)
-// {
-//     let modalBtn1 = modalBtn3[i];
-//     let modalBg1=modalBg3[i];
-//     let modalClose1=modalClose3[i];
-
-
-// modalBtn1.addEventListener('click',function(){
-//     modalBg1.classList.add('bg-active1');
-//     itemsselecteddetails1(1)
-   
-// });
-
-// modalClose1.addEventListener('click',function(){
-//     modalBg1.classList.remove('bg-active1');
-//     //window .location.reload();
-  
-// });
-
-// }
 
 
 
